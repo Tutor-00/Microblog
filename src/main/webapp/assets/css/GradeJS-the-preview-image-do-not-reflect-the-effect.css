@@ -1,0 +1,15 @@
+div.gradient-wrap {
+  text-align: center;
+  width: 100%;
+  padding: 50pt;
+  margin: 0;
+}
+
+div.col-xs-6 {
+  padding: 0;
+}
+
+div.col-md-12 {
+  padding: 0;
+}
+

@@ -1,0 +1,14 @@
+Sun Mar 29 15:36:44 CEST 2020 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
+----------------------------------------------------------------
+Sun Mar 29 15:36:44 CEST 2020:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-0171-2682-45b9-00000e23c258
+sulla directory di database C:\Users\Tutor\OneDrive\Documents\TPI\Microblog2\Microblog con caricatore classi jdk.internal.loader.ClassLoaders$AppClassLoader@6e5e91e4 
+Caricato da file:/C:/Program%20Files/Java/jdk1.8.0_111/db/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.2+7-LTS
+user.dir=C:\Program Files\Java\jdk1.8.0_111\db
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\Tutor\OneDrive\Documents\TPI\Microblog2
+Programma di caricamento classe database avviato - derby.database.classpath=''
