@@ -7,6 +7,7 @@ package it.marconivr.microblog.dao;
 
 import it.marconivr.microblog.dao.exceptions.NonexistentEntityException;
 import it.marconivr.microblog.entity.BlogCommento;
+import it.marconivr.microblog.entity.BlogPost;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -131,6 +132,14 @@ public class CommentoDao implements Serializable {
         } finally {
             em.close();
         }
+    }
+    
+    public static List<BlogCommento> findByPost(BlogPost post) {
+        EntityManager em = getEntityManager();
+        List<BlogCommento> commentoList = em.createQuery("SELECT c FROM BlogCommento c "
+        + "WHERE c.post = :p").setParameter("p", post).getResultList();
+        
+        return commentoList;
     }
     
 }

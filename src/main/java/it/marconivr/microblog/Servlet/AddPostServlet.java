@@ -42,6 +42,9 @@ public class AddPostServlet extends HttpServlet {
             if (u.getRuolo().equals("ADMIN")) {
             request.getRequestDispatcher("aggiungi.html").include(request, response);
             }
+            else {
+                request.getRequestDispatcher("alert.html").include(request, response);
+            }
         }
     }
 

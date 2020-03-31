@@ -21,7 +21,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.xml.bind.DatatypeConverter;
 
 /**
@@ -69,6 +68,7 @@ public class RegistrazionServlet extends HttpServlet {
             u.setSalt(salt);
             u.setEmail(email);
             UtenteDao.create(u);
+            
         } catch (Exception ex) {
             Logger.getLogger(RegistrazionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
