@@ -32,7 +32,7 @@
                         <ul class="nav navbar-nav mr-auto">
                             <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
                             <li class="nav-item" role="presentation"><a class="nav-link" href="PostServlet">Post</a></li>
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="aggiungi.html">Aggiungi</a></li>
+
 
                         </ul><span class="navbar-text actions"> <a href="login.html" class="login">Accedi</a><a class="btn btn-light action-button" role="button" href="registration.html" style="background-color: rgb(66,191,56);">Registrati</a></span></div>
                 </div>
@@ -61,35 +61,40 @@
         <script src="assets/js/Image-slider-carousel-With-arrow-buttons.js"></script>
         <script src="assets/js/Simple-Slider.js"></script>
         <div class="row">
+        <div class="col-12 col-sm-6 col-md-6 col-xl-7 offset-xl-3 site-form">
             <%@ page import="it.marconivr.microblog.entity.*" %> 
             <%@ page import="it.marconivr.microblog.dao.*" %> 
             <%@ page import="java.util.List" %>
             <% long postId = (long) request.getAttribute("postId"); %>
             <% BlogPost p = PostDao.findPost(postId); %>
             <div class="card">
-                <h1 class="card-title"><% out.print(p.getTitolo()); %></h1> <br>
-                <p class="card-text"> <% out.print(p.getUtente().getUsername() + " " + p.getDataOra().toString()); %></p>
-                <p class="card-text"> <% out.print(p.getContenuto()); %></p>
+                <h2 class="card-title"><% out.print(p.getTitolo()); %></h2> <br>
+                <h5 class="card-text"> <% out.print("Utente: "+p.getUtente().getUsername() + "<br> In data: " + p.getDataOra().toString()); %></h5> 
+                <p  class="card-text" ><h5><font face="verdana"> <% out.print(p.getContenuto()); %></font></p></h5>
                 <h4>Commenti</h4>
-                <div style="align: center">
+                <div>
                     <% List<BlogCommento> commentiList = (List<BlogCommento>) CommentoDao.findByPost(p);%>
                     <% for (int j = 0; j < commentiList.size(); j++) { %>
                     <% BlogCommento c = commentiList.get(j); %>
                     <div class="commento">
-                        <p> <% out.print(c.getUtente().getUsername() + " " + c.getDataOra().toString()); %></p>
-                        <p> <% out.print(c.getContenuto()); %></p>
+                        <p> <% out.print("Utente: " + c.getUtente().getUsername() + "<br> In data: " + c.getDataOra().toString()); %></p>
+                        <p><font face="verdana"> <% out.print(c.getContenuto()); %></font></p>
                     </div>
                     <% }%>
                 </div>
             </div>
+        </div>
+            <div></div>
+        
             <div class="col-12 col-sm-6 col-md-6 col-xl-7 offset-xl-3 site-form">
                 <form id="my-form" action="SaveCommentoServlet" method="POST">
 
                     <input type="hidden" name="postId" value="<%=postId%>">
 
                     <div class="form-group">
-                        <label class="sr-only" for="messages">Last Name</label><textarea class="form-control" rows="8" name="testo" required="" placeholder="Inserisci il testo..."></textarea></div><button class="btn btn-light btn-lg" type="submit" id="form-btn"
-                                                                                                                                                                                                        style="background-color: rgb(99,204,62);"><strong>Commenta</strong></button></form>
+                        <label class="sr-only" for="messages">Last Name</label><textarea class="form-control" rows="8" name="testo" required="" placeholder="Inserisci un commento..."></textarea></div><button class="btn btn-light btn-lg" type="submit" id="form-btn"
+                            style="background-color: rgb(99,204,62);"><strong>Commenta</strong></button>
+                </form>
             </div>
             <div class="clearfix"></div>
         </div>

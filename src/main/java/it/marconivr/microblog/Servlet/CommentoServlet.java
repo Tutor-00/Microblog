@@ -26,6 +26,7 @@ public class CommentoServlet extends HttpServlet {
             long postId = Long.parseLong(postIdString);
             request.setAttribute("postId", postId);
             request.getRequestDispatcher("commento.jsp").include(request, response);
+          
             
         }
     }

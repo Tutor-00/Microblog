@@ -45,7 +45,7 @@
     <div class="projects-horizontal">
         <div class="container">
             <div class="intro">
-                <h2 class="text-center">MicroBlog&nbsp;- Senapathige Sahas</h2>
+                <h2 class="text-center">MicroBlog&nbsp;</h2>
             
                 <h3 class="text-center"><% out.print("Bentornato, " + request.getAttribute("username")+ " buona permanenza!"); %>
             </div>
